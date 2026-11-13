@@ -5,232 +5,239 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>社長不慌｜松山社團幹部傳承指南與工具箱</title>
 <style>
-:root{--g:#0B4F37;--g2:#0e6445;--w:#F8F9FA;--y:#F2B824;--ink:#1d2a24;--mut:#5b6b63;--line:#dfe6e2;--card:#fff}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--w);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.75;font-size:17px}
-.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+:root{--g:#0B4F37;--w:#F8F9FA;--y:#F2B824;--ink:#1d2a24;--mut:#5b6b63;--line:#dfe6e2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--w);color:var(--ink);font:17px/1.75 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 18px}
 nav{background:var(--g);position:sticky;top:0;z-index:5}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 18px;flex-wrap:wrap}
 .logo{color:#fff;font-weight:800;font-size:20px;letter-spacing:.05em}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}
-.tab{border:0;background:transparent;color:#d8eadf;font:inherit;font-size:15px;padding:8px 14px;border-radius:999px;cursor:pointer}
+.tab{border:0;background:0;color:#d8eadf;font:inherit;font-size:15px;padding:8px 14px;border-radius:999px;cursor:pointer}
 .tab[aria-selected=true]{background:var(--y);color:var(--g);font-weight:700}
-.tab:hover:not([aria-selected=true]){background:rgba(255,255,255,.12)}
 :focus-visible{outline:3px solid var(--y);outline-offset:2px}
-header.hero{background:var(--g);color:#fff;padding:44px 0 56px}
-.hero h1{font-size:clamp(38px,8vw,64px);margin:0;line-height:1.15;letter-spacing:.08em}
-.hero .sub{font-size:clamp(17px,3vw,22px);margin:10px 0 0;color:#cfe5d8}
-.hero .slogan{display:inline-block;margin-top:22px;background:var(--y);color:var(--g);font-weight:800;padding:8px 18px;border-radius:12px;font-size:18px}
-main{margin-top:-28px;padding-bottom:50px}
+header{background:var(--g);color:#fff;padding:30px 0 50px}
+header h1{font-size:clamp(34px,7vw,54px);margin:0;letter-spacing:.08em;line-height:1.2}
+header p{margin:6px 0 0;color:#cfe5d8}
+.slogan{display:inline-block;margin-top:14px;background:var(--y);color:var(--g);font-weight:800;padding:6px 16px;border-radius:12px}
+main{margin-top:-26px;padding-bottom:90px}
 .panel{display:none}.panel.on{display:block}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:18px;box-shadow:0 2px 10px rgba(11,79,55,.06)}
-h2{color:var(--g);margin:0 0 4px;font-size:26px}
-h3{color:var(--g);margin:0 0 8px;font-size:19px}
-.lead{color:var(--mut);margin:0 0 18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:16px;box-shadow:0 2px 10px rgba(11,79,55,.06)}
+h2{color:var(--g);margin:0 0 4px;font-size:25px}h3{color:var(--g);margin:0 0 8px;font-size:19px}
+.lead{color:var(--mut);margin:0 0 14px}
 .tag{display:inline-block;background:var(--y);color:var(--g);font-size:13px;font-weight:700;padding:1px 10px;border-radius:999px;margin-right:6px}
-.btn{display:block;width:100%;border:0;background:var(--y);color:var(--g);font:inherit;font-weight:800;font-size:19px;padding:15px 22px;border-radius:14px;cursor:pointer;transition:transform .1s}
-.btn:hover{filter:brightness(.96)}.btn:active{transform:scale(.98)}
-.btn.ghost{background:transparent;border:2px solid var(--g);color:var(--g);font-size:16px;padding:10px 18px;width:auto;display:inline-block}
-/* progress */
-.bar{height:22px;background:#e6ede9;border-radius:999px;overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--g);transition:width .35s;border-radius:999px}
-.pct{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
-.pct b{font-size:38px;color:var(--g);line-height:1}
-.msg{margin-top:10px;color:var(--mut);font-weight:600}
-.chk{display:flex;gap:14px;align-items:flex-start;padding:14px;border:2px solid var(--line);border-radius:14px;margin-bottom:10px;cursor:pointer;background:#fff}
+.btn{border:0;background:var(--y);color:var(--g);font:inherit;font-weight:800;font-size:18px;padding:13px 22px;border-radius:14px;cursor:pointer}
+.btn:active{transform:scale(.98)}.btn.full{width:100%}
+.btn.ghost{background:#fff;border:2px solid var(--g);color:var(--g);font-size:15px;padding:8px 16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 14px}
+.chip{border:2px solid var(--g);background:#fff;color:var(--g);font:inherit;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--g);color:#fff}
+.chip.club{border-color:var(--line);color:var(--ink)}
+.chip.club[aria-pressed=true]{background:var(--y);border-color:var(--y);color:var(--g)}
+input,select,textarea{font:inherit;padding:11px 13px;border:2px solid var(--line);border-radius:12px;background:#fff;max-width:100%}
+textarea{width:100%;min-height:80px;resize:vertical}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row input{flex:1;min-width:140px}
+.bar{height:20px;background:#e6ede9;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--g);transition:width .35s}
+.pct{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}.pct b{font-size:36px;color:var(--g);line-height:1}
+.chk{display:flex;gap:12px;padding:13px;border:2px solid var(--line);border-radius:14px;margin-bottom:9px;cursor:pointer}
 .chk:has(input:checked){border-color:var(--g);background:#eef6f1}
-.chk input{width:26px;height:26px;accent-color:var(--g);flex:none;margin-top:2px}
-.chk b{display:block}.chk small{color:var(--mut)}
-.chk:has(input:checked) b{text-decoration:line-through;text-decoration-color:var(--y);text-decoration-thickness:3px}
-.roles{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-.role{border:2px solid var(--g);background:#fff;color:var(--g);font:inherit;font-weight:700;padding:9px 18px;border-radius:999px;cursor:pointer}
-.role[aria-pressed=true]{background:var(--g);color:#fff}
-.note h4{margin:14px 0 4px;color:var(--g)}
-.note ul{margin:0;padding-left:22px}
-details{border:1px solid var(--line);border-radius:14px;padding:4px 16px;margin-bottom:10px;background:#fff}
+.chk input{width:24px;height:24px;accent-color:var(--g);flex:none;margin-top:3px;padding:0}
+.chk small{display:block;color:var(--mut)}
+.note{background:#fff8e1;border-left:6px solid var(--y);border-radius:10px;padding:10px 14px;margin:8px 0}
+.note small{color:var(--mut);display:block}
+.note button{border:0;background:0;color:var(--g);text-decoration:underline;font:inherit;font-size:14px;cursor:pointer;padding:0 8px 0 0}
+details{border:1px solid var(--line);border-radius:14px;padding:2px 16px;margin-bottom:9px;background:#fff}
 summary{cursor:pointer;font-weight:700;padding:10px 0;color:var(--g)}
-/* evaluator */
-.name{width:100%;font:inherit;padding:12px 14px;border:2px solid var(--line);border-radius:12px;margin-bottom:16px}
-.sk{padding:14px 0;border-top:1px dashed var(--line)}
-.sk .row{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
-.sk output{font-weight:800;color:var(--g);white-space:nowrap}
-.sk small{color:var(--mut)}
-input[type=range]{width:100%;accent-color:var(--g);height:34px}
-.res{display:none;margin-top:20px}
-.top{background:var(--g);color:#fff;border-radius:18px;padding:22px}
-.top h3{color:var(--y);font-size:15px;margin:0}
-.top .big{font-size:34px;font-weight:800;margin:2px 0 6px}
-.rk{display:grid;grid-template-columns:64px 1fr 48px;gap:10px;align-items:center;margin:10px 0}
-.rk .bar{height:14px}
-.rk .bar i{background:var(--y)}
-.top .bar{background:rgba(255,255,255,.2)}
-.hint{background:#fff8e1;border-left:6px solid var(--y);padding:12px 16px;border-radius:10px;margin-top:14px;color:#4a3b05}
-/* Q&A */
-.q{margin-bottom:22px}
-.bub{max-width:88%;padding:14px 18px;border-radius:20px;margin-bottom:8px;display:block}
-.bub.me{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;font-weight:700;cursor:pointer;text-align:left;font:inherit;font-weight:700;width:auto}
-.bub.sr{background:var(--g);color:#fff;border-bottom-right-radius:4px;margin-left:auto;display:none}
-.q.open .bub.sr{display:block}
-.bub.sr ul{margin:6px 0 0;padding-left:20px}
-.bub .who{font-size:13px;color:var(--y);font-weight:700;display:block;margin-bottom:2px}
-.bub.me::after{content:"　點我看學長姐怎麼說 ▾";color:var(--mut);font-weight:400;font-size:14px}
-.q.open .bub.me::after{content:" ▴";}
-footer{text-align:center;color:var(--mut);padding:30px 20px;font-size:14px}
-@media(max-width:600px){body{font-size:16px}.card{padding:18px;border-radius:16px}.bub{max-width:96%}.rk{grid-template-columns:54px 1fr 42px}}
+details p{margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.grid .card{margin:0}
+.tl{position:relative;padding-left:28px;border-left:4px solid var(--y);margin-left:8px}
+.tl details{position:relative}.tl details::before{content:"";position:absolute;left:-39px;top:15px;width:18px;height:18px;border-radius:50%;background:var(--g);border:3px solid var(--y)}
+.pit{background:#fff8e1;border-radius:10px;padding:8px 12px}
+.chat{height:380px;overflow-y:auto;background:#eef3f0;border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.m{max-width:85%;padding:11px 16px;border-radius:18px}
+.m.bot{background:#fff;border-bottom-left-radius:4px}
+.m.me{background:var(--g);color:#fff;border-bottom-right-radius:4px;margin-left:auto}
+.m button{margin-top:8px}
+.fab{position:fixed;right:18px;bottom:18px;z-index:6;border:0;background:var(--y);color:var(--g);font:inherit;font-weight:800;padding:14px 20px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
+.th{border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px;background:#fff}
+.rp{background:#eef6f1;border-radius:12px;padding:8px 14px;margin:8px 0 8px 14px}
+footer{text-align:center;color:var(--mut);padding:24px;font-size:14px}
+@media(max-width:600px){body{font-size:16px}.card{padding:16px}.m{max-width:94%}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<nav><div class="wrap">
-  <span class="logo">社長不慌</span>
-  <div class="tabs" role="tablist">
-    <button class="tab" role="tab" data-t="sop" aria-selected="true">交接檢核表</button>
-    <button class="tab" role="tab" data-t="eval" aria-selected="false">能力評估器</button>
-    <button class="tab" role="tab" data-t="qa" aria-selected="false">避坑指南</button>
-  </div>
-</div></nav>
-
-<header class="hero"><div class="wrap">
-  <h1>社長不慌</h1>
-  <p class="sub">松山社團幹部傳承指南與工具箱</p>
-  <span class="slogan">幹部神隊友，經驗全保留。</span>
-</div></header>
+<nav><div class="wrap"><span class="logo">社長不慌</span>
+<div class="tabs" role="tablist">
+<button class="tab" data-t="home" aria-selected="true">① 選社團看傳承</button>
+<button class="tab" data-t="admin" aria-selected="false">② 行政與流程</button>
+<button class="tab" data-t="ai" aria-selected="false">③ AI 小幫手</button>
+<button class="tab" data-t="qa" aria-selected="false">④ 學長姐問答</button>
+</div></div></nav>
+<header><div class="wrap"><h1>社長不慌</h1><p>松山社團幹部傳承指南與工具箱</p><span class="slogan">幹部神隊友，經驗全保留。</span></div></header>
 
 <main class="wrap">
-
-<!-- 1 SOP -->
-<section id="sop" class="panel on">
-  <div class="card">
-    <h2>幹部交接 SOP 檢核表</h2>
-    <p class="lead">交接完一項就勾一項，進度會自動記在這台裝置上。</p>
-    <div class="pct"><span>目前交接進度</span><b id="pv">0%</b></div>
-    <div class="bar"><i id="pb"></i></div>
-    <p class="msg" id="pm">還沒開始，先從第一項勾起吧！</p>
-  </div>
-  <div class="card" id="list"></div>
-  <div class="card note">
-    <h2>各職位注意事項與實施要點</h2>
-    <p class="lead">選擇職位，查看該職務交接時要特別注意什麼。</p>
-    <div class="roles" id="roles"></div>
-    <div id="rolebox"></div>
-  </div>
+<!-- 1 HOME -->
+<section id="home" class="panel on">
+<div class="card"><h2>請問你是什麼社團？</h2><p class="lead">先選分類，再點社團；找不到的話可以自己輸入。</p>
+<div class="chips" id="cats"></div><div class="chips" id="clubs"></div>
+<div class="row"><input id="cname" placeholder="自行輸入社團名稱" maxlength="14"><select id="ccat"></select><button class="btn" id="cgo">進入我的社團</button></div></div>
+<div id="club"></div>
 </section>
 
-<!-- 2 Evaluator -->
-<section id="eval" class="panel">
-  <div class="card">
-    <h2>幹部能力與分工量化評估器</h2>
-    <p class="lead">為候選人的 5 項能力打分（1＝需要加強，5＝非常擅長），系統會算出最適合的職位。分數請以「實際合作經驗」為準，不要憑印象。</p>
-    <input class="name" id="who" placeholder="候選人名字（可不填）" maxlength="12">
-    <div id="sks"></div>
-    <button class="btn" id="go" style="margin-top:12px">計算最適合的職位</button>
-    <div class="res" id="res"></div>
-  </div>
+<!-- 2 ADMIN -->
+<section id="admin" class="panel">
+<div class="card"><h2>學務處與行政規定專區</h2><p class="lead">以下為常見的做法整理，實際日期、表單與規定請以社團組當學期公告為準。</p><div class="grid" id="rules"></div></div>
+<div class="card"><h2>辦活動標準作業流程</h2><p class="lead">由上往下依序進行，點開每一步看細節與避坑提醒。</p><div class="tl" id="tl"></div></div>
 </section>
 
-<!-- 3 QA -->
+<!-- 3 AI -->
+<section id="ai" class="panel">
+<div class="card"><h2>AI 幹部小幫手</h2><p class="lead">輸入問題，或點下方快速提問。（本機關鍵字回覆，不會連到網路。）</p>
+<div class="chat" id="chat" aria-live="polite"></div>
+<div class="chips" id="quick" style="margin-top:12px"></div>
+<div class="row"><input id="ain" placeholder="例如：海報要怎麼蓋章？" maxlength="80"><button class="btn" id="asend">送出</button></div></div>
+</section>
+
+<!-- 4 QA -->
 <section id="qa" class="panel">
-  <div class="card">
-    <h2>學長姐避坑指南</h2>
-    <p class="lead">這些狀況，學長姐都遇過。點開問題看解法。</p>
-  </div>
-  <div class="card" id="qlist"></div>
+<div class="card"><h2>常見問題 FAQ</h2><div id="faq"></div></div>
+<div class="card"><h2>向學長姐提問</h2><p class="lead">寫下你的社團和問題，送出後會出現在下方討論串。</p>
+<div class="row" style="margin-bottom:8px"><input id="qclub" placeholder="你的社團" maxlength="14"></div>
+<textarea id="qtext" placeholder="你遇到什麼問題？" maxlength="300"></textarea>
+<button class="btn full" id="qsend" style="margin-top:10px">送出提問</button></div>
+<div id="threads"></div>
 </section>
 </main>
-<footer>社長不慌｜幹部神隊友，經驗全保留。<br>本站內容為通用建議，實際規定請以學校社團組公告為準。</footer>
+<button class="fab" id="fab">💬 問小幫手</button>
+<footer>社長不慌｜資料暫存在你的瀏覽器（localStorage），換裝置或清除資料後不會保留。</footer>
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-/* tabs */
-function show(t){$$('.panel').forEach(p=>p.classList.toggle('on',p.id===t));$$('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));scrollTo({top:0})}
-$$('.tab').forEach(b=>b.onclick=()=>show(b.dataset.t));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ld=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}};
+const sv=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const day=()=>new Date().toLocaleDateString('zh-TW');
+function show(t){$$('.panel').forEach(p=>p.classList.toggle('on',p.id===t));$$('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));$('#fab').style.display=t==='ai'?'none':'';scrollTo({top:0})}
+$$('.tab').forEach(b=>b.onclick=()=>show(b.dataset.t));$('#fab').onclick=()=>show('ai');
 
-/* 1. SOP */
-const items=[
- ["社團印章與存摺點交","現場清點印章、存摺、提款卡（如有），並簽收登記，不要口頭交付。"],
- ["社團組行政規定確認","向社團組確認申請流程、截止日、場地與經費規範，並請學長姐補充實際踩過的雷。"],
- ["活動企劃書範本交接","取得上學年企劃書、核銷單、成果報告範本，並標註哪些欄位最常被退件。"],
- ["器材清單盤點","對照清單逐項清點、拍照存證，損壞或遺失的當場記錄。"],
- ["年度行事曆對接","對接已確定的活動、期限與固定合作對象，標出本學期第一個死線。"]
-];
-const KEY='sbh-sop';let done=[];
-try{done=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
-$('#list').innerHTML='<h3>交接項目</h3>'+items.map((it,i)=>`<label class="chk"><input type="checkbox" data-i="${i}" ${done.includes(i)?'checked':''}><span><b>${it[0]}</b><small>${it[1]}</small></span></label>`).join('')+'<button class="btn ghost" id="rst">全部重置</button>';
-function upd(){
-  const c=$$('#list input:checked'),n=Math.round(c.length/items.length*100);
-  $('#pv').textContent=n+'%';$('#pb').style.width=n+'%';
-  $('#pm').textContent=n==0?'還沒開始，先從第一項勾起吧！':n<50?'好的開始，繼續保持！':n<100?'過半了，剩下的別拖！':'全部完成！交接沒有遺漏，可以放心上任。';
-  try{localStorage.setItem(KEY,JSON.stringify(c.map(x=>+x.dataset.i)))}catch(e){}
+/* ===== 1 選社團 ===== */
+const CATS=['學術性','康樂／動態性','服務性','藝術／音樂性'];
+const CL=[['科研社',0],['辯論社',0],['熱舞社',1],['籃球社',1],['羽球社',1],['班聯會',2],['春暉社',2],['志工社',2],['吉他社',3],['合唱團',3],['美術社',3]];
+const EXTRA=['研究題目、比賽與成果發表時程對接','練習場地使用時段與運動／舞蹈安全檢查','服務對象與合作單位窗口、服務時數登記方式','樂器與音響設備保養、借用紀錄與表演場地'];
+const BASE=[['社辦鑰匙與器材盤點','逐項清點並拍照，鑰匙數量要簽收登記。'],['社團帳號密碼交接','社群、雲端、信箱與群組管理員，全部換成新幹部名下。'],['年度成發或重要活動時程','確認已定案的日期，並標出本學期第一個死線。'],['經費帳冊與印章點交','存摺、帳冊、單據與印章當面點清，並簽名。'],['幹部名冊與指導老師聯絡','留下全體幹部、前任幹部與指導老師的聯絡方式。']];
+const ROLES={
+'社長':['你要負責方向與最後決定，但不需要什麼都自己做。','每週固定開 30 分鐘幹部會，重要決定都要寫下來。','大型活動前先跟社團組與指導老師同步。'],
+'活動':['企劃書要提早送，場地和器材常常要先排。','活動前一週一定要彩排。','備好雨天或人數不足的備案。'],
+'總務':['每一筆錢都要有單據，核銷期限要記牢。','印章與存摺最好由不同人保管。','每月和社長對帳一次。'],
+'美宣':['海報貼文要先確認圖片與字體授權。','宣傳至少提前 7～10 天開始。','發布前請別人校對日期與地點。'],
+'公關':['對外聯絡用社團名義，並留下紀錄。','答應對方之前先跟社長確認。','活動結束 3 天內寄感謝信。']};
+let cat=-1,cur=null,editId=null,role='社長';
+$('#ccat').innerHTML=CATS.map((c,i)=>`<option value="${i}">${c}</option>`).join('');
+function drawChips(){
+ $('#cats').innerHTML=['全部',...CATS].map((c,i)=>`<button class="chip" data-c="${i-1}" aria-pressed="${cat===i-1}">${c}</button>`).join('');
+ $('#clubs').innerHTML=CL.filter(c=>cat<0||c[1]===cat).map(c=>`<button class="chip club" data-n="${c[0]}" aria-pressed="${cur&&cur.name===c[0]}">${c[0]}</button>`).join('');
+ $$('#cats .chip').forEach(b=>b.onclick=()=>{cat=+b.dataset.c;drawChips()});
+ $$('#clubs .chip').forEach(b=>b.onclick=()=>pickClub(b.dataset.n,CL.find(c=>c[0]===b.dataset.n)[1]));
 }
-$$('#list input').forEach(x=>x.onchange=upd);
-$('#rst').onclick=()=>{$$('#list input').forEach(x=>x.checked=false);upd()};
-upd();
-
-const R={
-"社長":{n:["要對所有決定負最後責任，但不用每件事自己做。","重大事項（經費、場地、對外）要與社團組、指導老師保持同步。"],p:["每週固定開一次幹部會議，30 分鐘內結束。","建立共用雲端資料夾，所有文件集中管理。","任期中期安排一次檢討，提前找接班人。"]},
-"活動":{n:["企劃書要早交，場地與器材常常需要提前申請。","活動前一週一定要做彩排或流程走查。"],p:["使用上學年企劃書範本，重新檢查日期與預算。","列出「活動前、中、後」分工表與負責人。","備妥雨天或人數不足的備案。"]},
-"美宣":{n:["海報、貼文若涉及圖片或字體，要確認有使用授權。","宣傳要在活動前 7～10 天開始，不要最後才趕。"],p:["向學長姐要原始檔與常用素材，整理成資料夾。","建立社團固定視覺（色彩、字體、Logo 用法）。","發布前請另一位幹部校對日期與地點。"]},
-"總務":{n:["款項來去都要有單據，核銷期限一定要記住。","印章與存摺由不同人保管較安全。"],p:["建立收支表，每筆支出當天登記。","核銷憑證拍照備份，並依活動分袋存放。","每月與社長對帳一次，月底結算。"]},
-"公關":{n:["對外聯絡要使用社團正式名義，並留下紀錄。","與店家、講師或他校的往來，要經社長確認再承諾。"],p:["整理合作對象通訊錄，註明上次合作狀況。","寫一份標準邀約信與感謝信範本。","活動後 3 天內寄出感謝，維持長期關係。"]}};
-const rb=$('#roles');
-Object.keys(R).forEach((k,i)=>{const b=document.createElement('button');b.className='role';b.textContent=k;b.setAttribute('aria-pressed',i==0);b.onclick=()=>pick(k);rb.appendChild(b)});
-function pick(k){
-  $$('.role').forEach(b=>b.setAttribute('aria-pressed',b.textContent===k));
-  const r=R[k];
-  $('#rolebox').innerHTML=`<details open><summary>${k}｜注意事項</summary><ul>${r.n.map(x=>`<li>${x}</li>`).join('')}</ul></details><details open><summary>${k}｜實施要點</summary><ul>${r.p.map(x=>`<li>${x}</li>`).join('')}</ul></details>`;
+$('#cgo').onclick=()=>{const n=$('#cname').value.trim();if(!n){$('#cname').focus();return}pickClub(n,+$('#ccat').value)};
+function pickClub(name,c){cur={name,cat:c};editId=null;role='社長';drawChips();drawClub();$('#club').scrollIntoView({behavior:'smooth'})}
+function drawClub(){
+ const n=cur.name,items=[...BASE,[EXTRA[cur.cat],'這是「'+CATS[cur.cat]+'」社團特別容易漏掉的項目，請向上屆確認細節。']];
+ const done=ld('sbh2-chk',{})[n]||[];
+ $('#club').innerHTML=`<div class="card"><h2>${esc(n)}｜交接必看清單</h2><span class="tag">${CATS[cur.cat]}</span>
+ <div class="pct"><span>交接進度</span><b id="pv">0%</b></div><div class="bar"><i id="pb"></i></div><br>
+ ${items.map((it,i)=>`<label class="chk"><input type="checkbox" data-i="${i}" ${done.includes(i)?'checked':''}><span><b>${esc(it[0])}</b><small>${esc(it[1])}</small></span></label>`).join('')}</div>
+ <div class="card"><h2>上屆幹部留給你的叮嚀</h2><div class="chips" id="rl">${Object.keys(ROLES).map(r=>`<button class="chip" data-r="${r}" aria-pressed="${r===role}">${r}</button>`).join('')}</div><div id="rbox"></div></div>
+ <div class="card"><h2 id="fh">新增傳承叮嚀</h2><p class="lead">現任或卸任幹部都可以寫，存好後會出現在上方對應職位。</p>
+ <div class="row" style="margin-bottom:8px"><select id="frole">${Object.keys(ROLES).map(r=>`<option>${r}</option>`).join('')}</select><input id="fby" placeholder="署名（例如：25 屆社長）" maxlength="16"></div>
+ <textarea id="ftext" placeholder="寫下你最想交代的一件事" maxlength="300"></textarea>
+ <button class="btn full" id="fsave" style="margin-top:10px">儲存叮嚀</button></div>`;
+ const upd=()=>{const c=$$('#club .chk input:checked'),p=Math.round(c.length/items.length*100);$('#pv').textContent=p+'%';$('#pb').style.width=p+'%';const all=ld('sbh2-chk',{});all[n]=c.map(x=>+x.dataset.i);sv('sbh2-chk',all)};
+ $$('#club .chk input').forEach(x=>x.onchange=upd);
+ const c0=$$('#club .chk input:checked').length;$('#pv').textContent=Math.round(c0/items.length*100)+'%';$('#pb').style.width=Math.round(c0/items.length*100)+'%';
+ $$('#rl .chip').forEach(b=>b.onclick=()=>{role=b.dataset.r;$$('#rl .chip').forEach(x=>x.setAttribute('aria-pressed',x===b));drawRole()});
+ $('#fsave').onclick=saveNote;drawRole();
 }
-pick('社長');
+function drawRole(){
+ const notes=(ld('sbh2-notes',{})[cur.name]||[]).filter(x=>x.role===role);
+ $('#rbox').innerHTML=`<h3>${role}的基本提醒</h3><ul>${ROLES[role].map(x=>`<li>${x}</li>`).join('')}</ul><h3>${esc(cur.name)}的學長姐寫給你</h3>`+(notes.length?notes.map(x=>`<div class="note">${esc(x.text)}<small>— ${esc(x.by)}・${x.t}</small><button data-e="${x.id}">編輯</button><button data-d="${x.id}">刪除</button></div>`).join(''):'<p class="lead">這個職位還沒有學長姐留言，歡迎在下方新增第一則。</p>');
+ $$('#rbox [data-e]').forEach(b=>b.onclick=()=>{const x=(ld('sbh2-notes',{})[cur.name]||[]).find(y=>y.id==b.dataset.e);editId=x.id;$('#frole').value=x.role;$('#fby').value=x.by;$('#ftext').value=x.text;$('#fh').textContent='編輯傳承叮嚀';$('#fsave').textContent='更新叮嚀';$('#ftext').scrollIntoView({behavior:'smooth',block:'center'})});
+ $$('#rbox [data-d]').forEach(b=>b.onclick=()=>{if(!confirm('確定要刪除這則叮嚀？'))return;const a=ld('sbh2-notes',{});a[cur.name]=a[cur.name].filter(y=>y.id!=b.dataset.d);sv('sbh2-notes',a);drawRole()});
+}
+function saveNote(){
+ const text=$('#ftext').value.trim();if(!text){$('#ftext').focus();return}
+ const a=ld('sbh2-notes',{}),l=a[cur.name]=a[cur.name]||[],by=$('#fby').value.trim()||'匿名學長姐',r=$('#frole').value;
+ if(editId){const x=l.find(y=>y.id===editId);Object.assign(x,{role:r,by,text,t:day()})}else l.push({id:Date.now(),role:r,by,text,t:day()});
+ sv('sbh2-notes',a);editId=null;$('#ftext').value='';$('#fh').textContent='新增傳承叮嚀';$('#fsave').textContent='儲存叮嚀';role=r;
+ $$('#rl .chip').forEach(x=>x.setAttribute('aria-pressed',x.dataset.r===r));drawRole();$('#rbox').scrollIntoView({behavior:'smooth'});
+}
+drawChips();
 
-/* 2. Evaluator */
-const S=[
- {id:'comm',n:'溝通協調',d:'能聽懂不同意見，並促成共識'},
- {id:'acct',n:'細心管帳',d:'對數字敏感，不漏單據、不算錯'},
- {id:'idea',n:'創意發想',d:'常有新點子，會做設計或活動巧思'},
- {id:'doc',n:'文書處理',d:'能寫企劃、公文、紀錄，格式清楚'},
- {id:'crisis',n:'危機處理',d:'突發狀況時能冷靜判斷、快速應變'}
-];
-const W={
- "社長":{comm:.3,crisis:.3,doc:.15,idea:.15,acct:.1},
- "活動":{comm:.25,idea:.25,crisis:.2,doc:.2,acct:.1},
- "美宣":{idea:.6,doc:.15,comm:.15,crisis:.05,acct:.05},
- "總務":{acct:.5,doc:.25,comm:.15,crisis:.1,idea:0},
- "公關":{comm:.5,idea:.2,crisis:.15,doc:.1,acct:.05}
-};
-const lv=['','需要加強','普通','還不錯','很擅長','非常突出'];
-$('#sks').innerHTML=S.map(s=>`<div class="sk"><div class="row"><b>${s.n}</b><output id="o-${s.id}">3 分・${lv[3]}</output></div><small>${s.d}</small><input type="range" min="1" max="5" value="3" id="${s.id}"></div>`).join('');
-S.forEach(s=>$('#'+s.id).oninput=e=>$('#o-'+s.id).textContent=e.target.value+' 分・'+lv[e.target.value]);
-$('#go').onclick=()=>{
-  const v={};S.forEach(s=>v[s.id]=+$('#'+s.id).value);
-  const nm=($('#who').value.trim())||'這位候選人';
-  const sc=Object.keys(W).map(r=>{
-    const raw=Object.entries(W[r]).reduce((a,[k,w])=>a+w*v[k],0);
-    const parts=Object.entries(W[r]).filter(([k,w])=>w>=.15).map(([k,w])=>({k,s:w*v[k],v:v[k]})).sort((a,b)=>b.s-a.s);
-    return{r,p:Math.round(raw/5*100),parts}
-  }).sort((a,b)=>b.p-a.p);
-  const t=sc[0],nameOf=id=>S.find(s=>s.id===id).n;
-  const why=t.parts.slice(0,2).map(x=>`${nameOf(x.k)}（${x.v} 分）`).join('、');
-  const weak=Object.entries(W[t.r]).filter(([k,w])=>w>=.2&&v[k]<=2).map(([k])=>nameOf(k));
-  const gap=t.p-sc[1].p;
-  $('#res').style.display='block';
-  $('#res').innerHTML=`<div class="top"><h3>推薦職位</h3><div class="big">${nm}：${t.r}　${t.p} 分</div>
-  <p style="margin:0">原因：${t.r}職務最看重的能力中，${nm}在${why}表現最好，與職務需求高度吻合。</p>
-  ${sc.map(x=>`<div class="rk"><span>${x.r}</span><div class="bar"><i style="width:${x.p}%"></i></div><b>${x.p}</b></div>`).join('')}</div>
-  <div class="hint"><span class="tag">提醒</span>${gap<=5?`第二名「${sc[1].r}」只差 ${gap} 分，可以與本人談談意願再決定。`:`領先第二名「${sc[1].r}」${gap} 分，適配度明確。`}${weak.length?`<br>要注意：${t.r}也需要「${weak.join('、')}」，建議安排學長姐或搭檔幹部互補。`:''}<br>評分僅供參考，也請尊重本人的興趣與意願。</div>`;
-  $('#res').scrollIntoView({behavior:'smooth',block:'nearest'});
-};
+/* ===== 2 行政 ===== */
+const RULES=[
+['場地借用規則','向社團組提出申請，教室、操場、禮堂各有不同的申請單位與時段。','先確認該場地是否被考試或校內活動占用；借用後要恢復原狀。'],
+['海報張貼與印章申請','海報須先送社團組核可並蓋章，才能張貼在指定公布欄。','不要貼在牆面或玻璃上；活動結束要自行撕除。'],
+['經費核銷單據注意事項','用「發票或收據」，抬頭、日期、品項、金額都要清楚，並依活動分袋保存。','手寫單據要有店章；單據遺失很難補，現場先拍照備份。'],
+['社費與公款管理','社費要有收款紀錄，公款與私人錢不能混在一起。','每月和社長對帳，並在期末把帳冊交給接任總務。']];
+$('#rules').innerHTML=RULES.map(r=>`<div class="card"><h3>${r[0]}</h3><p>${r[1]}</p><div class="pit"><span class="tag">避坑</span>${r[2]}</div></div>`).join('');
+const TL=[
+['活動前 1 個月','企劃書送審','寫好企劃書（目的、日期、地點、人數、預算、分工、安全規劃），先給指導老師看過，再送社團組。','審核可能會退件修改，所以不要卡在最後一週才送。'],
+['活動前 2 週','場地器材確認','確認場地核准、器材預約、講師或合作單位已回覆，並開始宣傳與報名。','器材要實際試用；備好雨天方案。'],
+['活動當天','簽到與安全維護','設簽到表、分工到位、安排人巡場與急救聯絡窗口，並拍照記錄。','先講清楚每個人的位置，最容易亂的是入場與收場。'],
+['活動後 1 週內','成果報告與核銷','整理照片、參加名單、心得與收支表，連同單據送件，並更新交接文件。','先核銷再慶功。把這次踩到的雷寫進傳承叮嚀。']];
+$('#tl').innerHTML=TL.map(t=>`<details><summary><span class="tag">${t[0]}</span>${t[1]}</summary><p>${t[2]}</p><div class="pit"><span class="tag">避坑</span>${t[3]}</div></details>`).join('');
 
-/* 3. Q&A */
-const Q=[
- ["沒有人要接幹部，壓力很大怎麼辦？",["先拆解：不是「沒人要」，通常是「不知道要做什麼」。把每個職位的工作內容寫成一頁說明。","降低門檻：開放「副幹部」或「見習幹部」，先參與一學期再接棒。","找人時要具體：與其說「誰來當社長」，不如問「你願意負責美宣嗎？」。","必要時調整規模：減少活動數量，讓幹部負擔變輕，也比較容易招到人。"]],
- ["遇到學長姐也沒遇過的行政問題怎麼辦？",["先找社團組老師，說明狀況並詢問正確流程，不要自己猜。","查其他社團的做法，或詢問更早幾屆的畢業學長姐。","處理完把過程寫進交接文件，下一屆就不會再卡關。","不確定的事先不要對外承諾，確認之後再回覆。"]],
- ["動態與靜態社團，要如何參考他社的公開資料？",["可以參考：活動成果、公開的活動企劃流程、社團介紹與招生方式。","動態社團（如康輔、體育）可參考他社的活動動線與安全規劃。","靜態社團（如研究、學術）可參考社課設計與成果發表形式。","注意：取用他人素材要註明出處，內部資料與個資不要擅自轉載。"]],
- ["新舊幹部意見不合，要聽誰的？",["先確認目的：舊做法是否有原因？可以請學長姐說明當年的考量。","新想法可以小規模試辦，用結果決定是否採用。","最後仍由當任幹部做決定，但要記錄理由。"]],
- ["活動前一週才發現器材或場地有問題？",["先確認替代方案：向社團組詢問可借用的場地或器材。","立即通知相關人員（講師、參加者），說明調整內容。","事後要記入交接文件，並在行事曆提醒下一屆提早確認。"]],
- ["交接文件太多，怎麼整理才有人看？",["用「一頁總覽」放在最前面：誰負責什麼、重要期限、聯絡人。","檔案名稱統一，如「2026_活動_企劃書_範本」。","每學期結束前，各職位各自更新一次。"]]
-];
-$('#qlist').innerHTML=Q.map((q,i)=>`<div class="q"><button class="bub me" aria-expanded="false"><span class="who">新任幹部</span>${q[0]}</button><div class="bub sr"><span class="who">學長姐說</span><ul>${q[1].map(x=>`<li>${x}</li>`).join('')}</ul></div></div>`).join('');
-$$('.q .me').forEach(b=>b.onclick=()=>{const q=b.parentElement;q.classList.toggle('open');b.setAttribute('aria-expanded',q.classList.contains('open'))});
+/* ===== 3 AI ===== */
+const KB=[
+{k:['成發','企劃書','送審','多久前','提前'],a:'一般建議活動前 1 個月送企劃書，成發這種大活動最好更早，因為場地與器材要排。\n步驟：先給指導老師看 → 送社團組審核 → 通過後確認場地器材。\n實際期限請以社團組當學期公告為準。'},
+{k:['海報','蓋章','張貼','公布欄'],a:'海報流程：\n1. 做好海報，確認日期、地點、社名都正確。\n2. 拿到社團組申請蓋章。\n3. 貼在指定公布欄，不貼牆面。\n4. 活動結束後自行撕除。'},
+{k:['社費','不夠','錢不夠','沒錢','預算','經費'],a:'社費不夠，先別慌：\n1. 重新盤點預算，區分「必要」與「可以少」。\n2. 縮小活動規模或改成比較省錢的形式。\n3. 詢問社團組是否有補助，並提前了解申請時間。\n4. 若要調整社費，要先跟社員說明用途。'},
+{k:['核銷','發票','收據','單據'],a:'核銷小提醒：\n・單據要有日期、品項、金額與抬頭或店章。\n・依活動分袋收好，現場先拍照備份。\n・活動後 1 週內整理收支表送件。'},
+{k:['場地','借教室','借用','禮堂','教室'],a:'借場地：向社團組提出申請，並先確認該時段沒有被占用。用完要恢復原狀。越大的場地越要提早預約。'},
+{k:['器材','鑰匙','社辦','盤點'],a:'交接時要逐項清點器材，拍照存證，鑰匙數量要簽收。損壞或遺失的，當場記在交接文件。'},
+{k:['交接','新手','怎麼開始','剛上任','傳承'],a:'剛上任？先做這三件事：\n1. 到「選社團看傳承」勾交接清單。\n2. 約前任幹部吃飯聊 1 小時，並記錄重點。\n3. 排出本學期第一個死線。'},
+{k:['沒人','接幹部','招募','找人','不想當'],a:'沒人想當幹部的時候，先把每個職位的工作寫成一頁說明，再開放「見習幹部」降低門檻。找人時要具體問：「你願意負責美宣嗎？」'},
+{k:['簽到','安全','當天','巡場'],a:'活動當天：設簽到表、分工到位、安排巡場，並確認急救聯絡窗口。先講好每個人的位置，入場與收場最容易亂。'},
+{k:['帳號','密碼','社群','雲端','ig'],a:'帳號交接：社群、雲端、信箱與群組的管理員權限都要轉給新幹部，最好用社團共用信箱，不要綁個人帳號。'},
+{k:['成果','報告','照片'],a:'成果報告：活動後 1 週內整理照片、名單、心得與收支表。這也是下一屆最好的參考資料。'}];
+const QUICK=['辦成發要多久前交企劃書？','海報要怎麼蓋章？','社費不夠怎麼辦？','核銷要注意什麼？','剛上任要先做什麼？'];
+const chat=$('#chat');
+function say(t,who,link){const d=document.createElement('div');d.className='m '+who;d.innerHTML=esc(t).replace(/\n/g,'<br>');if(link){const b=document.createElement('button');b.className='btn ghost';b.textContent='去問學長姐';b.onclick=()=>show('qa');d.appendChild(b)}chat.appendChild(d);chat.scrollTop=chat.scrollHeight}
+function ask(q){
+ q=q.trim();if(!q)return;say(q,'me');
+ let best=null,bs=0;const l=q.toLowerCase();
+ KB.forEach(e=>{const s=e.k.reduce((a,k)=>a+(l.includes(k)?k.length:0),0);if(s>bs){bs=s;best=e}});
+ setTimeout(()=>best?say(best.a,'bot'):say('這題我手上的資料還沒有答案。你可以到「學長姐問答」發問，讓有經驗的人回覆你。','bot',true),350);
+}
+say('嗨，我是社長不慌的 AI 小幫手！可以問我企劃書、海報、核銷、社費、交接等問題。','bot');
+$('#quick').innerHTML=QUICK.map(q=>`<button class="chip">${q}</button>`).join('');
+$$('#quick .chip').forEach(b=>b.onclick=()=>ask(b.textContent));
+$('#asend').onclick=()=>{ask($('#ain').value);$('#ain').value=''};
+$('#ain').onkeydown=e=>{if(e.key==='Enter'&&!e.isComposing){$('#asend').click()}};
+
+/* ===== 4 FAQ + 問答 ===== */
+const FAQ=[
+['沒有人要接幹部怎麼辦？','把職位工作寫成一頁說明，開放見習幹部，並具體邀請特定的人。'],
+['前任幹部聯絡不上怎麼辦？','先問指導老師與社團組，也可以找同屆社員或上一屆畢業生。'],
+['活動被退件怎麼辦？','先看退件原因，修改後重送。下次提早一週送審，並把原因寫進交接文件。'],
+['社員不來開會怎麼辦？','縮短會議時間，議程提前傳給大家，並把會議重點寫成一句話通知。'],
+['單據弄丟了怎麼辦？','先請店家補開，若無法補，與指導老師及社團組討論替代方式。之後一律現場拍照。'],
+['不同社團可以合辦活動嗎？','通常可以，但要先講好分工、經費與簽核由誰負責，並先詢問社團組。']];
+$('#faq').innerHTML=FAQ.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('');
+let QA=ld('sbh2-qa',null)||[{id:1,club:'熱舞社',q:'成發前一週才發現音響壞了，該怎麼辦？',t:day(),r:[{by:'24 屆社長',text:'先向社團組詢問可借用的設備，並在活動前 2 週就試用一次音響。下次也記得備好藍牙喇叭。',t:day()}]}];
+function drawQA(){
+ sv('sbh2-qa',QA);
+ $('#threads').innerHTML='<h2 style="margin:6px 0 10px">討論串</h2>'+[...QA].reverse().map(x=>`<div class="th"><span class="tag">${esc(x.club)}</span><b>${esc(x.q)}</b><small style="display:block;color:var(--mut)">${x.t}</small>
+ ${x.r.map(r=>`<div class="rp">${esc(r.text)}<small style="display:block;color:var(--mut)">— ${esc(r.by)}・${r.t}</small></div>`).join('')}
+ <div class="row" style="margin-top:10px"><input placeholder="我是學長姐，我來回答…" maxlength="300" data-i="${x.id}"><button class="btn ghost" data-a="${x.id}">我是學長姐，我來回答</button></div></div>`).join('');
+ $$('#threads [data-a]').forEach(b=>b.onclick=()=>{const i=$(`#threads input[data-i="${b.dataset.a}"]`),v=i.value.trim();if(!v){i.focus();return}
+  QA.find(x=>x.id==b.dataset.a).r.push({by:'學長姐',text:v,t:day()});drawQA()});
+}
+$('#qsend').onclick=()=>{const q=$('#qtext').value.trim(),c=$('#qclub').value.trim()||'未填社團';if(!q){$('#qtext').focus();return}
+ QA.push({id:Date.now(),club:c,q,t:day(),r:[]});$('#qtext').value='';drawQA()};
+drawQA();
 </script>
 </body>
 </html>
